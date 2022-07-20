@@ -1,0 +1,88 @@
+languageCode:           "en"
+title:                  "Arizona Bootstrap"
+baseURL:                "{{az_site_host}}{{az_site_base_url}}"
+
+security:
+  enableInlineShortcodes: true
+  funcs:
+    getenv:
+      - ^HUGO_
+      - NETLIFY
+
+markup:
+  goldmark:
+    renderer:
+      unsafe:           true
+  highlight:
+    noClasses:          false
+  tableOfContents:
+    startLevel:         2
+    endLevel:           6
+
+buildDrafts:            true
+buildFuture:            true
+
+enableRobotsTXT:        true
+metaDataFormat:         "yaml"
+disableKinds:           ["404", "taxonomy", "term", "RSS"]
+
+publishDir:             "_site"
+
+module:
+  mounts:
+    - source:           dist
+      target:           static/docs/{{az_short_version}}/dist
+    - source:           site/assets
+      target:           assets
+    - source:           site/content
+      target:           content
+    - source:           site/data
+      target:           data
+    - source:           site/layouts
+      target:           layouts
+    - source:           site/static
+      target:           static
+    - source:           site/static/docs/{{az_short_version}}/assets/img/favicons/apple-touch-icon.png
+      target:           static/apple-touch-icon.png
+    - source:           site/static/docs/{{az_short_version}}/assets/img/favicons/favicon.ico
+      target:           static/favicon.ico
+
+params:
+  description:          "The most popular HTML, CSS, and JS library in the world."
+  authors:              "Mark Otto, Jacob Thornton, and Bootstrap contributors"
+  social_image_path:    /docs/{{az_short_version}}/assets/brand/bootstrap-social.png
+  social_logo_path:     /docs/{{az_short_version}}/assets/brand/bootstrap-social-logo.png
+
+  current_version:      "{{az_version}}"
+  current_ruby_version: "{{az_version}}"
+  docs_version:         "{{az_short_version}}"
+  rfs_version:          "v9.0.6"
+  github_org:           "https://github.com/az-digital"
+  repo:                 "https://github.com/az-digital/arizona-bootstrap"
+  twitter:              "getbootstrap"
+  slack:                "https://quickstart.arizona.edu/join-us-on-slack"
+  opencollective:       "https://opencollective.com/bootstrap"
+  blog:                 "https://blog.getbootstrap.com/"
+  themes:               "https://themes.getbootstrap.com/"
+  icons:                "https://icons.getbootstrap.com/"
+  swag:                 "https://cottonbureau.com/people/bootstrap"
+  azdigital:            "https://digital.arizona.edu"
+  az_quickstart:        "https://github.com/az-digital/az_quickstart"
+
+  download:
+    source:             "https://github.com/az-digital/arizona-bootstrap/archive/v{{az_version}}.zip"
+    dist:               "https://github.com/az-digital/arizona-bootstrap/releases/download/v{{az_version}}/bootstrap-{{az_version}}-dist.zip"
+    dist_examples:      "https://github.com/az-digital/arizona-bootstrap/releases/download/v{{az_version}}/bootstrap-{{az_version}}-examples.zip"
+
+  cdn:
+    # See https://www.srihash.org for info on how to generate the hashes
+    css:              "https://cdn.digital.arizona.edu/lib/arizona-bootstrap/{{az_version}}/css/arizona-bootstrap.min.css"
+    css_rtl:          "https://cdn.digital.arizona.edu/lib/arizona-bootstrap/{{az_version}}/css/arizona-bootstrap.rtl.min.css"
+    js:               "https://cdn.digital.arizona.edu/lib/arizona-bootstrap/{{az_version}}/js/arizona-bootstrap.min.js"
+    js_bundle:        "https://cdn.digital.arizona.edu/lib/arizona-bootstrap/{{az_version}}/js/arizona-bootstrap.bundle.min.js"
+    popper:           "https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+    popper_hash:      "sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+
+  anchors:
+    min: 2
+    max: 5
