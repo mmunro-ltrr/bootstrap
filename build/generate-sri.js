@@ -19,7 +19,7 @@ const sh = require('shelljs')
 
 sh.config.fatal = true
 
-const configFile = path.join(__dirname, '../config.yml')
+const configFile = path.join(__dirname, '../config_template.yml')
 
 // Array of objects which holds the files to generate SRI hashes for.
 // `file` is the path from the root folder

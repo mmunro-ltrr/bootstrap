@@ -1,6 +1,6 @@
 /*!
-  * Bootstrap dropdown.js v5.2.0 (https://getbootstrap.com/)
-  * Copyright 2011-2022 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
+  * Bootstrap dropdown.js v5.2.0 (https://github.com/az-digital/arizona-bootstrap)
+  * Copyright 2011-2022 Arizona Digital Contributors
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
   */
 (function (global, factory) {

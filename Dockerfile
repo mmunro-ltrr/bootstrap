@@ -20,7 +20,7 @@ COPY scripts/serve-review-site.sh /usr/local/bin/serve-review-site
 ARG AZ_BOOTSTRAP_FROZEN_DIR
 ENV AZ_BOOTSTRAP_FROZEN_DIR ${AZ_BOOTSTRAP_FROZEN_DIR:-/azbuild/arizona-bootstrap}
 ARG AZ_BOOTSTRAP_SOURCE_DIR
-ENV AZ_BOOTSTRAP_SOURCE_DIR ${AZ_BOOTSTRAP_SOURCE_DIR:-/arizona-bootstrap-src}
+ENV AZ_BOOTSTRAP_SOURCE_DIR ${AZ_BOOTSTRAP_SOURCE_DIR:-/arizona-bootstrap-source}
 
 # Silence warnings from the update-notifier npm package.
 ENV NO_UPDATE_NOTIFIER 1
