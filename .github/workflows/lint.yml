@@ -7,7 +7,7 @@ on:
     paths-ignore:
       - 'dist/**'
     branches:
-      - main
+      - marm-actions
 
 jobs:
   lint-code:
