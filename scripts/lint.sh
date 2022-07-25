@@ -63,6 +63,7 @@ export AZ_SITE_HOST
 
 create-hugo-config
 
+ls -alt /home/node/.npm/_logs  >&2
 npm run dist
 npm run docs
 npm run lint \
