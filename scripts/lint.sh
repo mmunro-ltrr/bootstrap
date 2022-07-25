@@ -63,6 +63,7 @@ export AZ_SITE_HOST
 
 create-hugo-config
 
+chmod 777 /home/node/.npm/_logs
 ls -alt /home/node/.npm/_logs  >&2
 npm run dist
 npm run docs
