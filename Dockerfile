@@ -1,4 +1,4 @@
-FROM node:16.15.1-bullseye-slim
+FROM node:16.16.0-bullseye-slim
 
 ENV LANG C.UTF-8
 ENV JAVA_HOME /usr/local/openjdk-11
@@ -54,8 +54,10 @@ RUN mkdir /home/node/.npm \
   && npm config set cache='/home/node/.npm' \
   && chmod 755 /root \
   && chmod 644 /root/.npmrc \
-  && npm install -g npm-check-updates@14.0.1 \
+  && npm install --location=global npm-check-updates@14.0.1 \
   && npm install \
   && find node_modules -name '.DS_Store' -exec rm {} \;
+
+USER node:node
 
 WORKDIR $AZ_BOOTSTRAP_SOURCE_DIR
