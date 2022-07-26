@@ -60,9 +60,6 @@ cd "$AZ_BOOTSTRAP_SOURCE_DIR"
 
 AZ_SITE_HOST='internal_files'
 export AZ_SITE_HOST
-
-create-hugo-config
-
 echo 'Default ID....'
 id
 chmod 777 /home/node/.npm/_logs
@@ -74,6 +71,9 @@ echo 'Log directory....'
 ls -alt /home/node/.npm/_logs  >&2
 echo 'ID in npm....'
 npm run debugaction
+
+create-hugo-config
+
 npm run dist
 npm run docs
 npm run lint \
