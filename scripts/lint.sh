@@ -63,9 +63,16 @@ export AZ_SITE_HOST
 
 create-hugo-config
 
+echo 'Default ID....'
 id
 chmod 777 /home/node/.npm/_logs
+echo 'What does npm do....'
+command -v npm
+echo 'Default directory....'
+ls -alt
+echo 'Log directory....'
 ls -alt /home/node/.npm/_logs  >&2
+echo 'ID in npm....'
 npm run debugaction
 npm run dist
 npm run docs
