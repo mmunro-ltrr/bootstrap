@@ -56,7 +56,9 @@ RUN mkdir /home/node/.npm \
   && chmod 644 /root/.npmrc \
   && npm install --location=global npm-check-updates@14.0.1 \
   && npm install \
-  && find node_modules -name '.DS_Store' -exec rm {} \;
+  && find node_modules -name '.DS_Store' -exec rm {} \; \ 
+  && touch config.yml \
+  && chown node:node config.yml
 
 USER node:node
 
