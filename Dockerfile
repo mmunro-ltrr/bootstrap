@@ -55,8 +55,6 @@ RUN mkdir /home/node/.npm \
   && npm config set cache='/home/node/.npm' \
   && npm install \
   && find node_modules -name '.DS_Store' -exec rm {} \; \ 
-  && touch config.yml \
-  && chown node:node config.yml \
   && chown -R node:node "$AZ_BOOTSTRAP_FROZEN_DIR"
 
 USER node:node
