@@ -60,7 +60,7 @@ RUN mkdir /home/node/.npm \
   && find node_modules -name '.DS_Store' -exec rm {} \; \ 
   && touch config.yml \
   && chown -R node:node "$AZ_BOOTSTRAP_FROZEN_DIR" \
-  && chown node:node config.yml
+  && chmod 666 config.yml
 
 USER node:node
 
