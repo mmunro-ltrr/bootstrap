@@ -29,9 +29,6 @@ jobs:
           echo "AZ_EPHEMERAL_IMAGE=${imagestem}${oldhash}" >> ${GITHUB_ENV}
           echo "AZ_BOOTSTRAP_SOURCE_DIR=/arizona-bootstrap-source" >> ${GITHUB_ENV}
           echo "AZ_BOOTSTRAP_FROZEN_DIR=/azbuild/arizona-bootstrap" >> ${GITHUB_ENV}
-      - name: Replace default workspace file ownership to match node in the Docker container
-        run: |
-          sudo chown -R 1000:1000 ${{ github.workspace }}
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
       - name: Docker authentication
@@ -58,5 +55,5 @@ jobs:
       - name: Run the code linting checks
         run: |
           sudo touch config.yml
-          sudo chown 1000:1000 config.yml
+          sudo chown -R 1000:1000 ${{ github.workspace }}
           docker run --rm -v $(pwd):"${AZ_BOOTSTRAP_SOURCE_DIR}" "$AZ_EPHEMERAL_IMAGE" lint
