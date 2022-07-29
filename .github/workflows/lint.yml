@@ -55,6 +55,6 @@ jobs:
       - name: Run the code linting checks
         run: |
           sudo touch config.yml
-          sudo find ${{ github.workspace }} -path ./.git -prune -o exec chown 1000:1000 {} \;
+          sudo find ${{ github.workspace }} -path ./.git -prune -o -exec chown 1000:1000 {} \;
           sudo chown 1000:1000 ${{ github.workspace }}
           docker run --rm -v $(pwd):"${AZ_BOOTSTRAP_SOURCE_DIR}" "$AZ_EPHEMERAL_IMAGE" lint
