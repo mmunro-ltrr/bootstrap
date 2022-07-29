@@ -57,4 +57,6 @@ jobs:
           echo "AZ_EPHEMERAL_IMAGE=${ephemeral}" >> ${GITHUB_ENV}
       - name: Run the code linting checks
         run: |
+          sudo touch config.yml
+          sudo chown 1000:1000 config.yml
           docker run --rm -v $(pwd):"${AZ_BOOTSTRAP_SOURCE_DIR}" "$AZ_EPHEMERAL_IMAGE" lint
