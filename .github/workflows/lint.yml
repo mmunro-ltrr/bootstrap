@@ -56,5 +56,8 @@ jobs:
         run: |
           sudo touch config.yml
           sudo find ${{ github.workspace }} -path ./.git -prune -o -exec chown 1000:1000 {} \;
+          echo "$pwd"
+          echo ${{ github.workspace }}
+          ls -al
           sudo chown 1000:1000 ${{ github.workspace }}
           docker run --rm -v $(pwd):"${AZ_BOOTSTRAP_SOURCE_DIR}" "$AZ_EPHEMERAL_IMAGE" lint
