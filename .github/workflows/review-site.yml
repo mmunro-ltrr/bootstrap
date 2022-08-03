@@ -73,4 +73,4 @@ jobs:
       - name: Debug generated site code
         run: |
           cat config.yml
-          cat _site/docs/5.2/getting-started/color-contrast/index.html
+          cat _site/docs/5.2/getting-started/javascript/index.html
